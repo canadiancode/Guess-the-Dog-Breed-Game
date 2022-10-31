@@ -1,3 +1,11 @@
+/* Template Literal */
+:root {
+    --background-color: #F0EBCE;
+    --dark-brown: #AA8B56;
+    --light-green: #4E6C50;
+    --dark-green: #395144;
+}
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -5,7 +13,7 @@
 }
 
 body {
-    background-color: rgb(196, 126, 93);
+    background-color: var(--background-color);
     box-shadow: inset 0px 0px 15px 1px black;
     height: 100vh;
     width: 100vw;
@@ -13,22 +21,9 @@ body {
     grid-template-columns: repeat(1, 1fr);
 }
 
-.pawsDiv {
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-}
-
-.pawsBackground {
-    z-index: -1;
-    width: 30%;
-}
-
-h1, h3, p, label {
-    color: white;
-    text-shadow: 1px 1px 1px black;
+h1, h3, p, label, option {
+    color: var(--dark-green);
+    font-family: 'Noto Sans Display', sans-serif;
 }
 
 h1 {
@@ -37,6 +32,8 @@ h1 {
     margin: 0;
     padding: 1em 0em;
     margin-bottom: -2em;
+    font-family: 'Playball', cursive;
+    font-weight: 900;
 }
 
 .imgAndSelectionDiv {
@@ -45,36 +42,37 @@ h1 {
     grid-gap: 1em;
     height: 90%;
     width: 80%;
-    max-width: 35em;
+    max-width: 40em;
+    position: relative;
 }
 
 .imgDiv {
     height: 100%;
     width: 100%;
-    background: white;
-    border: white solid 1px;
     border-radius: 10px;
-    max-width: 20em;
-    max-height: 18em;
+    max-width: 25em;
+    max-height: 22em;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     align-content: center;
     align-items: center;
-    padding: 0.2em;
+    padding: 1.5em;
     overflow: hidden;
 }
 
 .imgDiv img {
-    height: 100%; 
+    height: 16em; 
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px black;
 }
 
 .SelectionAndScore {
     height: 100%;
     width: 100%;
     padding: 0em 2em;
+    padding-top: 2em;
 }
 
 .Score {
@@ -97,13 +95,40 @@ h1 {
     max-height: 80%;
 }
 
+.progressbar {
+    display: grid;
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    content : '';
+    height: 5px;
+    background-color: var(--dark-green);
+    border-radius: 15px;
+    margin-bottom: -8em;
+    margin-left: 1em;
+}
+
+.progressbarlabels {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.progressbarlabels p {
+    border-left: solid 1px var(--dark-green);
+    padding-left: 0.2em;
+}
+
 button {
     max-height: 3em;
-    background-color: rgb(245, 202, 9);
+    background-color: var(--dark-brown);
     border: white 2px solid;
     border-radius: 10px;
     min-width: 15em;
     box-shadow: 0px 0px 15px 0px black;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: bolder;
 }
 
 button:active {
@@ -119,9 +144,14 @@ button:active {
     margin-bottom: 2em;
 }
 
+.EndHeader {
+    font-family: 'Playball', cursive;
+    font-weight: 900;
+}
+
 .playAgainButton {
     max-height: 3em;
-    background-color: rgb(245, 202, 9);
+    background-color: var(--dark-brown);
     border: white 2px solid;
     border-radius: 10px;
     min-width: 15em;
