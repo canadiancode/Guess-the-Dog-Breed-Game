@@ -18,7 +18,6 @@ function getBreed() {
             const uppercaseBreed = breed.charAt(0).toUpperCase() + breed.slice(1);
             breedOption.appendChild(document.createTextNode(uppercaseBreed));
             dogSelectionDropDown.appendChild(breedOption);
-
         })
     })
 }
@@ -63,6 +62,22 @@ function getImage() {
 };
 getImage();
 
+// progress bar code
+const progressBarLabelDiv = document.querySelector('.progressbarlabels');
+for (let i = 0; i < 10; i++) {
+    const progressBarLabel = document.createElement('p');
+    const progressNumber = [i] * 10;
+    const percentage = (progressNumber + '%'); 
+    progressBarLabel.appendChild(document.createTextNode(percentage));
+    progressBarLabelDiv.appendChild(progressBarLabel);
+};
+
+const progressBar = document.querySelector('.progressbar');
+let progressBarNonPercentage = 0;
+let progressBarDivision = progressBarNonPercentage * 10;
+let progressBarLength = progressBarDivision + '%';
+progressBar.style.width = progressBarLength;
+
 // Click button to see if the breed is correct
 let numberofTurns = 0;
 const currentScore = document.querySelector('.currentScore');
@@ -75,22 +90,44 @@ function checkBreed() {
 
     if (currentDogBreed.includes(dogSelectionDropDown.selectedOptions[0].value)) {
         numberofTurns++;
+
+        //progress bar
+        progressBarNonPercentage++;
+        let progressBarDivision = progressBarNonPercentage * 10;
+        let progressBarLength = progressBarDivision + '%';
+        console.log(progressBarNonPercentage);
+        progressBar.style.width = progressBarLength;
+        
+
         currentScoreNumber++;
         currentScore.innerHTML = `${currentScoreNumber}`; 
         getImage();
+
     } else {
         numberofTurns++;
+
+        //progress page
+        progressBarNonPercentage++;
+        let progressBarDivision = progressBarNonPercentage * 10;
+        let progressBarLength = progressBarDivision + '%';
+        console.log(progressBarNonPercentage);
+        progressBar.style.width = progressBarLength;
+
         getImage();
     }
 
     if (numberofTurns === 10) {
         imageAndScoreContainer.style.display = 'block';
         selectionButton.remove();
-        imageAndScoreDiv.innerHTML = `<div class="endGameDiv"><h3>Thanks for playing!</h3><br><p class="EndScore">Your score is ${currentScoreNumber}/10</p><button class="playAgainButton" onclick="window.location.reload()">Play Again!</button></div>`;
+        imageAndScoreDiv.innerHTML = `
+        <div class="endGameDiv">
+            <h3 class="EndHeader">Thanks for playing!</h3><br>
+            <p class="EndScore">Your score is ${currentScoreNumber}/10</p>
+            <button class="playAgainButton" onclick="window.location.reload()">Play Again!</button>
+        </div>
+        `;
 
         const playAgainButton = document.querySelector('.playAgainButton');
         playAgainButton.style.height = '3em';
-
     }
 };
-
