@@ -1,0 +1,134 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(196, 126, 93);
+    box-shadow: inset 0px 0px 15px 1px black;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.pawsDiv {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pawsBackground {
+    z-index: -1;
+    width: 30%;
+}
+
+h1, h3, p, label {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0em;
+    margin-bottom: -2em;
+}
+
+.imgAndSelectionDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    height: 90%;
+    width: 80%;
+    max-width: 35em;
+}
+
+.imgDiv {
+    height: 100%;
+    width: 100%;
+    background: white;
+    border: white solid 1px;
+    border-radius: 10px;
+    max-width: 20em;
+    max-height: 18em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-content: center;
+    align-items: center;
+    padding: 0.2em;
+    overflow: hidden;
+}
+
+.imgDiv img {
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.SelectionAndScore {
+    height: 100%;
+    width: 100%;
+    padding: 0em 2em;
+}
+
+.Score {
+    display: flex;
+    padding-top: 0.2em;
+    padding-bottom: 1.2em;
+}
+
+.Score p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.Selection {
+    margin-top: 0.5em;
+}
+
+.dogSelection {
+    min-width: 10em;
+    max-height: 80%;
+}
+
+button {
+    max-height: 3em;
+    background-color: rgb(245, 202, 9);
+    border: white 2px solid;
+    border-radius: 10px;
+    min-width: 15em;
+    box-shadow: 0px 0px 15px 0px black;
+}
+
+button:active {
+    box-shadow: 0px 0px 15px -2px black;
+}
+
+.endGameDiv {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.EndScore {
+    margin-bottom: 2em;
+}
+
+.playAgainButton {
+    max-height: 3em;
+    background-color: rgb(245, 202, 9);
+    border: white 2px solid;
+    border-radius: 10px;
+    min-width: 15em;
+    box-shadow: 0px 0px 15px 0px black;
+}
+
+.playAgainButton:active {
+    box-shadow: 0px 0px 15px -2px black;
+}
+
