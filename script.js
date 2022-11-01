@@ -94,10 +94,11 @@ function checkBreed() {
 
     if (currentDogBreed.includes(dogSelectionDropDown.selectedOptions[0].value)) {
         numberofTurns++;
-
-        currentScoreNumber++;
-        currentScore.innerHTML = `${currentScoreNumber}`; 
         getImage();
+        
+        // Add +1 to the score 
+        currentScoreNumber++;
+        currentScore.innerHTML = `${currentScoreNumber}`;
 
         //progress bar
         progressBarNonPercentage++;
