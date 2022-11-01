@@ -118,6 +118,7 @@ h1 {
 .progressbarlabels p {
     border-left: solid 1px var(--dark-green);
     padding-left: 0.2em;
+    height: 1.2em;
 }
 
 button {
