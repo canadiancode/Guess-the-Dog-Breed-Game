@@ -72,11 +72,15 @@ for (let i = 0; i < 10; i++) {
     progressBarLabelDiv.appendChild(progressBarLabel);
 };
 
-const progressBar = document.querySelector('.progressbar');
+// Progress bar function
 let progressBarNonPercentage = 0;
-let progressBarDivision = progressBarNonPercentage * 10;
-let progressBarLength = progressBarDivision + '%';
-progressBar.style.width = progressBarLength;
+function progressBar() {
+    const progressBar = document.querySelector('.progressbar');
+    let progressBarDivision = progressBarNonPercentage * 10;
+    let progressBarLength = progressBarDivision + '%';
+    progressBar.style.width = progressBarLength;
+};
+progressBar();
 
 // Click button to see if the breed is correct
 let numberofTurns = 0;
@@ -91,29 +95,21 @@ function checkBreed() {
     if (currentDogBreed.includes(dogSelectionDropDown.selectedOptions[0].value)) {
         numberofTurns++;
 
-        //progress bar
-        progressBarNonPercentage++;
-        let progressBarDivision = progressBarNonPercentage * 10;
-        let progressBarLength = progressBarDivision + '%';
-        console.log(progressBarNonPercentage);
-        progressBar.style.width = progressBarLength;
-        
-
         currentScoreNumber++;
         currentScore.innerHTML = `${currentScoreNumber}`; 
         getImage();
 
+        //progress bar
+        progressBarNonPercentage++;
+        progressBar();
+
     } else {
         numberofTurns++;
+        getImage();
 
         //progress page
         progressBarNonPercentage++;
-        let progressBarDivision = progressBarNonPercentage * 10;
-        let progressBarLength = progressBarDivision + '%';
-        console.log(progressBarNonPercentage);
-        progressBar.style.width = progressBarLength;
-
-        getImage();
+        progressBar();
     }
 
     if (numberofTurns === 10) {
