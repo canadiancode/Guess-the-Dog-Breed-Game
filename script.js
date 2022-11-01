@@ -82,13 +82,13 @@ function progressBar() {
 };
 progressBar();
 
-// Click button to see if the breed is correct
+// The number of turns taken and add the code to change score on the DOM
 let numberofTurns = 0;
 const currentScore = document.querySelector('.currentScore');
 let currentScoreNumber = 0;
-
 currentScore.appendChild(document.createTextNode(currentScoreNumber));
 
+// Click button to see if the breed is correct
 selectionButton.addEventListener('click', checkBreed);
 function checkBreed() {
 
