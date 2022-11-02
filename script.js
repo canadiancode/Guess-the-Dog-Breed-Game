@@ -28,13 +28,12 @@ $(function(){
     $(".dogSelection").select2();
 }); 
 
-// add the image to the DOM
+// add the dog image to the DOM
 var currentDogBreed = [
     {
         breed: 'test'
     }
 ];
-
 function getImage() {
     fetch('https://dog.ceo/api/breeds/image/random')
     .then(res => res.json())
